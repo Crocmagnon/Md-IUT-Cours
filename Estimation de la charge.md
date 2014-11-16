@@ -2,19 +2,19 @@
 ## Méthode EXPERT (ou DELPHI)
 On fait appel à des experts pour donner une estimation sur le sujet.
 
-Experts    | Applications jugées comparables en charge | Charges correspondantes | 1ères estimations 
------------|-------------------------------------------|-------------------------|--------------------
-A          | D04                                       | 9 m-h                   | [8;13] -> 10&nbsp;m-h
-           | K67                                       | 13 m-h                  |
-           | RESA                                      | 8 m-h                   |
-B          | IA55                                      | 6 m-h                   | [5;6] -> 8&nbsp;m-h
-           | SCI8                                      | 5 m-h                   |
-           | BIB1                                      | 6 m-h                   |
-C          | APP                                       | 14 m-h                  | [14;21] -> 14&nbsp;m-h
-           | ASS8                                      | 21 m-h                  |
-D          | K67                                       | 13 m-h                  | [13;21] -> 15&nbsp;m-h
-           | APP                                       | 14 m-h                  |
-           | ASS8                                      | 21 m-h                  |
+Experts | Applications jugées comparables en charge | Charges correspondantes  | 1ères estimations 
+--------|-------------------------------------------|--------------------------|--------------------
+A       | D04                               | 9 m-h  | [8;13] -> 10&nbsp;m-h
+        | K67                               | 13 m-h |
+        | RESA                              | 8 m-h  |
+B       | IA55                              | 6 m-h  | [5;6] -> 8&nbsp;m-h
+        | SCI8                              | 5 m-h  |
+        | BIB1                              | 6 m-h  |
+C       | APP                               | 14 m-h | [14;21] -> 14&nbsp;m-h
+        | ASS8                              | 21 m-h |
+D       | K67                               | 13 m-h | [13;21] -> 15&nbsp;m-h
+        | APP                               | 14 m-h |
+        | ASS8                              | 21 m-h |
 
 On s'entendra peut-être sur __12 m-h__
 
