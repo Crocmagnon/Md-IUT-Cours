@@ -61,6 +61,9 @@ Une méthode de dev définit une démarche reproductible pour obtenir des résul
 - Notation graphique
 - ...
 
+UML date de 1996.
+
+## Méthodes de développement.
 ### Cycle de vie en cascade
 - Étude des besoins
 - Analyse
@@ -84,4 +87,14 @@ Code
 - Acceptation du changement dans les besoins
 - Travail d'équipe
 
-Démarche incrémentale : Projet évolutif, on procède par incrément et prototypage.
+Démarche incrémentale : Projet évolutif, on procède par incrément et prototypage.  
+On identifie les besoins, on en sélectionne pour le sprint (on code vite, en général 2 semaines), et on recommence pour itérer jusqu'au produit final.
+
+## Orienté objet
+Paradigme consistant à modéliser par la définition et l'interaction de briques appelées objets.  
+Un objet représente un concept, une idée, ou toute entité du monde physique, comme une voiture, une personne.
+
+### Classe
+Regroupe les entités qui se ressemblent dans leur __description__ (attributs) et __comportement__ (opérations).
+
+### Objet 
