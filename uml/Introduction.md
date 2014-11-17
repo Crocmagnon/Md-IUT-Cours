@@ -97,4 +97,36 @@ Un objet représente un concept, une idée, ou toute entité du monde physique, 
 ### Classe
 Regroupe les entités qui se ressemblent dans leur __description__ (attributs) et __comportement__ (opérations).
 
-### Objet 
+### Objet
+Un objet est une entité aux frontières définies, possédant une entité et encapsulant un état et un comportement.
+
+__Un objet est une instance d'une classe__.
+
+    Objet = État + Identité + Comportement
+
+### Héritage
+Réutilisation d'une classe pour en créer une nouvelle : généralisation/spécialisation.
+
+On __factorise les éléments communs__ d'un ensemble de classe dans une classe plus générale appelée __super-classe__.  
+Les classes plus spécialisées sont des __sous-classes__.
+
+La généralisation correspond au lien sémantique "est un" (par ex. : Un Étudiant est une Personne).
+
+### Association
+Une relation sémantique entre classes.  
+Représente l'ensemble des liens entre les objets des classes qui participent à l'association.
+
+### Lien
+Une connexion entre objets, une instance d'une association.
+
+Ex :  
+Pays 'a pour capitale' Ville => Association  
+France 'a pour capitale' Paris => Lien
+
+### Encapsulation
+Principe de conception qui consiste à protéger le coeur du système de tout accès intempestif venant de l'extérieur. Il faut limiter l'accès aux informations internes à une classe.
+
+Les valeurs des attributs d'un objet ne peuvent pas être manipulées directement par les autres objets.  
+Seules les opérations sont accessibles.
+
+
