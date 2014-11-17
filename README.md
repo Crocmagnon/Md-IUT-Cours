@@ -1,3 +1,3 @@
-Cours de GPI
+Cours à l'IUT
 ============
-Rassemble les cours de GPI à l'IUT ASPE
+Rassemble les cours de GPI et UML à l'IUT ASPE
