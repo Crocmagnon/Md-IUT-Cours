@@ -66,11 +66,11 @@ UML date de 1996.
 ## Méthodes de développement.
 ### Cycle de vie en cascade
 - Étude des besoins
-- Analyse
-- Conception
-- Code
-- Test
-- Déploiement
+- Analyse : On commence à construire les modèles
+- Conception : On définit l'architecture du système, on affine les modèles
+- Code : On traduit le modèle en code
+- Test : Vérification des exigences
+- Déploiement : On déploie chez le client
 
 => Vérification (tests) trop tardive
 
