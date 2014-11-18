@@ -76,9 +76,9 @@ UML date de 1996.
 
 ### Processus en V
 Mise en relation des phases en amont avec les phases de tests en aval.
-Spécifications => Validation
-Conception prélim => Intégration
-Conception détaillée => Tests unitaires
+Spécifications => Validation  
+Conception prélim => Intégration  
+Conception détaillée => Tests unitaires  
 Code
 
 ### Méthodes agiles
