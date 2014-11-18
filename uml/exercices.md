@@ -20,3 +20,35 @@ Retour d'erreur, refuse la lecture
 ### Question f
 Identification de la zone, décodage, affichage, gestion d'erreur
 
+## Exercice 2
+Scénario
+
+### Question a, b
+- Patient
+    + Nom
+    + Prénom
+    + Âge
+    + Adresse
+    + N° Sécu
+- Dossier médical
+- Consultation
+    + Date
+    + Heure
+    + Présence patient
+    + Prescription
+    + Hospitalisation
+- Médecin
+- Infirmière
+- Opératrice
+- Examen
+    + Intitulé
+    + Date
+    + Heure
+- Lit
+
+### Question c
+Créer un dossier médical, un patient, une consultation.  
+Réalisation examen
+
+### Question d
+Obtenir un rendez-vous, valider une consultation, admission patient
