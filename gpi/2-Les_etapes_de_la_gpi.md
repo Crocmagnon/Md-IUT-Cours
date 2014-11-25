@@ -49,3 +49,9 @@ Remarques :
 _(Tu sais faire, je vais pas te le dessiner)_
 
 ## Pilotage de projet
+On arrive à une répartition 54.5 pour Claude contre 71 pour Camille.  
+__Problème__ : On ne connaît pas assez Claude pour savoir quel est son coefficient de productivité.  
+$$\textrm{Coefficient de productivite} = \frac{\textrm{avancement}}{\textrm{temps passe}}$$
+$$\textrm{charge affectee} = \frac{\textrm{charge initiale}}{\textrm{coeff de prod}}$$
+
+On passe alors de la charge initiale à la charge affectée qui est une charge "personnalisée".
