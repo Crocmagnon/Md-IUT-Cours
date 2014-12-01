@@ -55,3 +55,13 @@ $$\textrm{Coefficient de productivite} = \frac{\textrm{avancement}}{\textrm{temp
 $$\textrm{charge affectee} = \frac{\textrm{charge initiale}}{\textrm{coeff de prod}}$$
 
 On passe alors de la charge initiale à la charge affectée qui est une charge "personnalisée".
+
+## Différents indicateurs
+### Coefficient de productivité
+$$\frac{\textrm{avancement}}{\textrm{temps passe}}$$
+
+### Coefficient de performance
+$$\frac{\textrm{charge affectee}}{\textrm{temps passe} + \textrm{reste a faire}}$$
+
+### Coefficient d'utilisation du temps
+$$\frac{\textrm{temps passe}}{\textrm{temps disponible}}$$
