@@ -52,8 +52,6 @@ def recherche_booleen(tete, valeur):
     : entrées
     :   tete : Maillon
     :   valeur : X
-    : Précondition
-    :   tete existe
     """
     # Début
     ptr = tete
@@ -74,8 +72,6 @@ def recherche_maillon(tete, valeur):
     :   valeur : X
     : sortie
     :   ptr : Maillon
-    : Précondition
-    :   tete existe
     """
     # Début
     ptr = tete
@@ -88,3 +84,23 @@ def recherche_maillon(tete, valeur):
     # Fin
 ```
 
+Écrire un algo qui compte le nombre d'éléments dans une liste
+
+```python
+def compte(tete):
+    """
+    : entrées
+    :   tete : Maillon
+    : sortie
+    :   compte : int
+    """
+    # Début
+    ptr = tete
+    compte = 0
+    while ptr is not None:
+        compte += 1
+        ptr = ptr.suivant
+    # endwhile
+    return compte
+    # Fin
+```
