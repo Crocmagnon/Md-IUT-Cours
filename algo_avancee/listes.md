@@ -144,23 +144,104 @@ def supprimer(tete, valeur):
     """
     : entrées
     :   tete : Maillon
-    :   maillon : Maillon
+    :   valeur : X
     """
     # Début
     if tete is not None:
         ptr = tete
+        precedent = None
+        trouve = False
+        if tete.val == valeur:
+            trouve = True
         while ptr.suivant is not None and not trouve:
+            precedent = ptr
             if ptr.suivant.val == valeur:
-                old = ptr.suivant
-                ptr.suivant = old.suivant
-                free(old)
                 trouve = True
             ptr = ptr.suivant
         # endwhile
-        if not trouve and ptr.val == valeur:
-            old = ptr.suivant
-            ptr.suivant = old.suivant
-            free(old)
+        if (not trouve and ptr.val == valeur) or trouve:
+            precedent.suivant = ptr.suivant
+            free(ptr)
     # endif
     # Fin
 ```
+
+```python
+def combiner(tete1, tete2):
+    """
+    : entrées
+    :   tete1, tete2 : Maillon
+    : precondition :
+    : Les deux listes sont triées
+    """
+    # Début
+    if not tete1:
+        return tete2
+    elif not tete2:
+        return tete1
+    # endif
+
+    tete3 = new Maillon()
+    tete3.val = tete1.val if tete1.val <= tete2.val else tete2.val
+    tete3.suivant = None
+    ptr1, ptr2, ptr3 = tete1, tete2, tete3
+    while ptr1 or ptr2:
+        ptr3.suivant = new Maillon()
+        if not ptr2 and ptr1:
+            ptr3.suivant.val = ptr1.val
+            ptr1 = ptr1.suivant
+        elif not ptr1:
+            ptr3.suivant.val = ptr2.val
+            ptr2 = ptr2.suivant
+        else:
+            if (ptr1.val <= ptr2.val):
+                ptr3.suivant.val = ptr1.val
+                ptr1 = ptr1.suivant
+            else:
+                ptr3.suivant.val = ptr2.val
+                ptr2 = ptr2.suivant
+            # endif
+        # endif
+    # endwhile
+    return tete3
+    # Fin
+```
+
+```python
+def autreCombiner(tete1, tete2):
+    """
+    : entrées
+    :   tete1, tete2 : Maillon
+    : precondition :
+    : Les deux listes sont triées
+    """
+    # Début
+    if not tete1:
+        return tete2
+    elif not tete2:
+        return tete1
+    # endif
+
+    tete3 = new Maillon()
+    tete3.val = tete1.val
+    tete3.suivant = None
+    ptr1, ptr2, ptr3 = tete1, tete2, tete3
+
+    # On copie la liste 1 dans celle qu'on retourne.
+    while ptr1:
+        ptr3.suivant = new Maillon()
+        ptr3.suivant.val = ptr1.val
+        ptr1 = ptr1.suivant
+        ptr3 = ptr3.suivant
+    # endwhile
+
+    # On utilise l'algo précédemment écrit pour insérer la deuxième.
+    while ptr2:
+        insereTrie(tete3, ptr2)
+        ptr2 = ptr2.suivant
+    # endwhile
+
+    return tete3
+```
+
+
