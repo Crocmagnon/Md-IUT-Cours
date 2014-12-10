@@ -113,24 +113,54 @@ def insereTrie(tete, maillon):
     :   maillon : Maillon
     """
     # Début
-    trouve = False
-    if maillon.val <= tete.val:
-        maillon.suivant = tete
+    if tete is None:
         tete = maillon
-        trouve = True
-    # endif
+    else:
+        trouve = False
+        if maillon.val <= tete.val:
+            maillon.suivant = tete
+            tete = maillon
+            trouve = True
+        # endif
 
-    if not trouve:
+        if not trouve:
+            ptr = tete
+            while ptr.suivant is not None and not trouve:
+                if maillon.val <= ptr.suivant.val and maillon.val >= ptr.val:
+                    trouve = True
+                    maillon.suivant = ptr.suivant
+                    ptr.suivant = maillon
+                ptr = ptr.suivant
+            # endwhile
+            if not trouve:
+                ptr.suivant = maillon
+        # endif
+    # endif
+    # Fin
+```
+
+```python
+def supprimer(tete, valeur):
+    """
+    : entrées
+    :   tete : Maillon
+    :   maillon : Maillon
+    """
+    # Début
+    if tete is not None:
         ptr = tete
         while ptr.suivant is not None and not trouve:
-            if maillon.val <= ptr.suivant.val and maillon.val >= ptr.val:
+            if ptr.suivant.val == valeur:
+                old = ptr.suivant
+                ptr.suivant = old.suivant
+                free(old)
                 trouve = True
-                maillon.suivant = ptr.suivant
-                ptr.suivant = maillon
             ptr = ptr.suivant
         # endwhile
-        if not trouve:
-            ptr.suivant = maillon
+        if not trouve and ptr.val == valeur:
+            old = ptr.suivant
+            ptr.suivant = old.suivant
+            free(old)
     # endif
     # Fin
 ```
