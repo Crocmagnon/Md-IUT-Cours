@@ -27,11 +27,11 @@ def creationliste(nbval):
         val = int(input())
 
         if cpt == 0:
-            tete = new Maillon()
+            tete = Maillon()
             tete.val = val
             ptr = tete
         else:
-            ptr.suivant = new Maillon()
+            ptr.suivant = Maillon()
             ptr = ptr.suivant
             ptr.val = val
         #endif
@@ -181,12 +181,12 @@ def combiner(tete1, tete2):
         return tete1
     # endif
 
-    tete3 = new Maillon()
+    tete3 = Maillon()
     tete3.val = tete1.val if tete1.val <= tete2.val else tete2.val
     tete3.suivant = None
     ptr1, ptr2, ptr3 = tete1, tete2, tete3
     while ptr1 or ptr2:
-        ptr3.suivant = new Maillon()
+        ptr3.suivant = Maillon()
         if not ptr2 and ptr1:
             ptr3.suivant.val = ptr1.val
             ptr1 = ptr1.suivant
@@ -222,14 +222,14 @@ def autreCombiner(tete1, tete2):
         return tete1
     # endif
 
-    tete3 = new Maillon()
+    tete3 = Maillon()
     tete3.val = tete1.val
     tete3.suivant = None
     ptr1, ptr2, ptr3 = tete1, tete2, tete3
 
     # On copie la liste 1 dans celle qu'on retourne.
     while ptr1:
-        ptr3.suivant = new Maillon()
+        ptr3.suivant = Maillon()
         ptr3.suivant.val = ptr1.val
         ptr1 = ptr1.suivant
         ptr3 = ptr3.suivant
