@@ -104,3 +104,33 @@ def compte(tete):
     return compte
     # Fin
 ```
+
+```python
+def insereTrie(tete, maillon):
+    """
+    : entrées
+    :   tete : Maillon
+    :   maillon : Maillon
+    """
+    # Début
+    trouve = False
+    if maillon.val <= tete.val:
+        maillon.suivant = tete
+        tete = maillon
+        trouve = True
+    # endif
+
+    if not trouve:
+        ptr = tete
+        while ptr.suivant is not None and not trouve:
+            if maillon.val <= ptr.suivant.val and maillon.val >= ptr.val:
+                trouve = True
+                maillon.suivant = ptr.suivant
+                ptr.suivant = maillon
+            ptr = ptr.suivant
+        # endwhile
+        if not trouve:
+            ptr.suivant = maillon
+    # endif
+    # Fin
+```
