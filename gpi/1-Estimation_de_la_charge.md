@@ -64,7 +64,7 @@ $$\textrm{Délai} = 2,5 * 13^{0,38} = 7\textrm{ mois}$$
 ## Méthode DIEBOLD
 $$\textrm{Charge (en j-h)} = \textrm{KISL} * \textrm{Complexité} * \textrm{Savoir-faire} * \textrm{Connaissance}$$  
 $\textrm{Complexité} \in [10;40]$  
-$\textrm{Savoir faire} \in [0,65;2]$  
+$\textrm{Savoir faire} \in [0.65;2]$  
 $\textrm{Connaissance} \in [1;2]$  
 $$\textrm{Charge} = 5 * \frac{40 * 8 + 25 * 19 + 10 * 10}{37} * 1 * 1,5 = 180 \textrm{ j-h}$$  
 
