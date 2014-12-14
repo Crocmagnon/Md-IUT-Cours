@@ -58,15 +58,15 @@ Délai :
 
 Ici : 
 
-$$\textrm{Charge} = 2,4 * 5^{1,05} = 13\textrm{ m-h}$$
-$$\textrm{Délai} = 2,5 * 13^{0,38} = 7\textrm{ mois}$$
+$$\textrm{Charge} = 2.4 * 5^{1.05} = 13\textrm{ m-h}$$
+$$\textrm{Délai} = 2.5 * 13^{0.38} = 7\textrm{ mois}$$
 
 ## Méthode DIEBOLD
 $$\textrm{Charge (en j-h)} = \textrm{KISL} * \textrm{Complexité} * \textrm{Savoir-faire} * \textrm{Connaissance}$$  
 $\textrm{Complexité} \in [10;40]$  
-$\textrm{Savoir faire} \in [0,65;2]$  
+$\textrm{Savoir faire} \in [0.65;2]$  
 $\textrm{Connaissance} \in [1;2]$  
-$$\textrm{Charge} = 5 * \frac{40 * 8 + 25 * 19 + 10 * 10}{37} * 1 * 1,5 = 180 \textrm{ j-h}$$  
+$$\textrm{Charge} = 5 * \frac{40 * 8 + 25 * 19 + 10 * 10}{37} * 1 * 1.5 = 180 \textrm{ j-h}$$  
 
 ## Méthode analytique
 On aborde cette méthode quand on a signé avec le client.  
@@ -74,15 +74,15 @@ Il faut entrer dans le détail des tâches.
 
 __Plusieurs grandes étapes :__
 
-- Étude préalable -> $10%$ du projet -> 20,5 j-h
-- Étude détaillée -> $\frac{1}{2}$ Réalisation -> 61,5
+- Étude préalable -> 10% du projet -> 20,5 j-h
+- Étude détaillée -> $\frac{1}{2}$ Réalisation -> 61,5 j-h
 - Réalisation -> 123 j-h (voir étude de cas)
   - Étude technique
   - Programmation
   - Jeux d'essais
   - Tests & corrections
 
-$\textrm{Estimation projet} = \frac{61,5+123}{0,9} = 205$
+$\textrm{Estimation projet} = \frac{61.5+123}{0.9} = 205$
 
 Dans l'étape de programmation on va rechercher des tâches standards (voir tableau page 30).  
 On arrive alors à un certain temps en j-h pour la programmation qui constitue la base. On prend un certain pourcentage de cette base pour chacune des autres étapes de la réalisation.
@@ -113,8 +113,8 @@ Il faut prévoir d'autant plus de temps pour réaliser un projet :
 ### Que les contraintes d'exploitation sont fortes
 $$\textrm{DIT} = \sum{\textrm{points de niveau de difficulté d'exploitation}}$$
 $$\textrm{DIT} \leq 70$$
-$$\textrm{FA} = 0,65 + \frac{\textrm{DIT}}{100} = 0,9$$
-$$\textrm{PFA} = \textrm{PFB} * \textrm{FA} = 112 * 0,9 \simeq 100 \textrm{points ajustés}$$
+$$\textrm{FA} = 0.65 + \frac{\textrm{DIT}}{100} = 0.9$$
+$$\textrm{PFA} = \textrm{PFB} * \textrm{FA} = 112 * 0.9 \simeq 100 \textrm{points ajustés}$$
 
 `FA` = Fonction d'ajustement
 `PFB` = Points de Fonction Bruts (ceux calculés avant)
