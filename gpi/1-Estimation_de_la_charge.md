@@ -82,7 +82,7 @@ __Plusieurs grandes étapes :__
   - Jeux d'essais
   - Tests & corrections
 
-$\textrm{Estimation projet} = \frac{61.5+123}{0.9} = 205$
+$\textrm{Estimation projet} = \frac{61.5+123}{0.9} = 205\textrm{ j-h}$
 
 Dans l'étape de programmation on va rechercher des tâches standards (voir tableau page 30).  
 On arrive alors à un certain temps en j-h pour la programmation qui constitue la base. On prend un certain pourcentage de cette base pour chacune des autres étapes de la réalisation.
