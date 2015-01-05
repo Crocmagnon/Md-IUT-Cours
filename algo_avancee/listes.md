@@ -244,4 +244,42 @@ def autreCombiner(tete1, tete2):
     return tete3
 ```
 
+Éclater une liste en deux listes contenant les nombres pairs et impairs.
+```python
+def autreCombiner(tete1, tete2):
+    """
+    : entrées
+    :   tete1, tete2 : Maillon
+    : precondition :
+    : Les deux listes sont triées
+    """
+    # Début
+    if not tete1:
+        return tete2
+    elif not tete2:
+        return tete1
+    # endif
+
+    tete3 = Maillon()
+    tete3.val = tete1.val
+    tete3.suivant = None
+    ptr1, ptr2, ptr3 = tete1, tete2, tete3
+
+    # On copie la liste 1 dans celle qu'on retourne.
+    while ptr1:
+        ptr3.suivant = Maillon()
+        ptr3.suivant.val = ptr1.val
+        ptr1 = ptr1.suivant
+        ptr3 = ptr3.suivant
+    # endwhile
+
+    # On utilise l'algo précédemment écrit pour insérer la deuxième.
+    while ptr2:
+        insereTrie(tete3, ptr2)
+        ptr2 = ptr2.suivant
+    # endwhile
+
+    return tete3
+```
+
 
