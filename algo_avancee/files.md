@@ -53,4 +53,4 @@ def retirer_debut_file(file):
 ```
 
 ### Définition (tableaux)
-`TODO : Implémenter ça pour dans deux semaines`
+`TODO : Implémenter ça pour le 1/02`
