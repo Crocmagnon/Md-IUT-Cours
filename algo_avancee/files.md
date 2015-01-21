@@ -35,7 +35,7 @@ def file_pleine(file):
 
 def ajout_fin_file(file, elt):
     mail = Maillon(valeur=elt, suivant=None)
-    if file.fin != None:
+    if file.fin:
         file.fin.suivant = mail
     else:
         file.debut = mail
@@ -54,3 +54,20 @@ def retirer_debut_file(file):
 
 ### Définition (tableaux)
 `TODO : Implémenter ça pour le 1/02`
+
+## Exercices
+### Exercice 1
+Écrire un algo qui affiche les éléments d'une file en la conservant.
+
+```python
+def affiche_file(f):
+    f_temp = creer_file()
+
+    while !file_vide(f):
+        print(debut_file(f))
+        ajouter_fin_file(f_temp, debut_file(f))
+        retirer_debut_file(f)
+
+    f = f_temp
+    return f
+```
