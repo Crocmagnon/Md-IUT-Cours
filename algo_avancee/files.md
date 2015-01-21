@@ -97,7 +97,7 @@ def afficher_file(f):
 ### Exercice 2
 Écrire une fonction récursive de recherche dans une file non triée.
 
-#### 1ère solution
+#### Solution
 Ici la file est modifiée, tous les éléments précédant l'élément recherché sont supprimés.
 ```python
 def rech_recursive(f, elt):
@@ -108,5 +108,45 @@ def rech_recursive(f, elt):
     
     retirer_debut_file(f)
     return(rech_recursive(f, elt))
+```
 
+### Exercice 3
+Écrire une fonction qui inverse une file.
+
+#### Solution
+```python
+def inverse(f):
+    p = creer_pile()
+    while !file_vide(f):
+        empile(p, debut_file(f))
+        retirer_debut_file(f)
+
+    while !pile_vide(p):
+        ajouter_fin_file(f, sommet(p))
+        depile(p)
+
+    return(f)
+```
+
+### Exercice 4
+Soit une file d'entiers. Écrire un algorithme qui réordonne la file de sorte que les entiers pairs soient en début de file.
+
+#### Solution
+```python
+def tri_pairs(f):
+    f_pairs = creer_file()
+    f_impairs = creer_file()
+    
+    while !file_vide(f):
+        debut = debut_file(f)
+        if debut % 2 == 0:
+            ajouter_fin_file(f_pairs, debut)
+            retirer_debut_file(f)
+        else:
+            ajouter_fin_file(f,_impairs debut)
+            retirer_debut_file(f)
+
+    while !file_vide(f_impairs):
+        ajouter_fin_file(f_pairs, debut_file(f_impairs))
+        retirer_fin_file(f_impairs)
 ```
