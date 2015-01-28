@@ -141,10 +141,10 @@ def tri_pairs(f):
         debut = debut_file(f)
         if debut % 2 == 0:
             ajouter_fin_file(f_pairs, debut)
-            retirer_debut_file(f)
         else:
             ajouter_fin_file(f,_impairs debut)
-            retirer_debut_file(f)
+        
+        retirer_debut_file(f)
 
     while !file_vide(f_impairs):
         ajouter_fin_file(f_pairs, debut_file(f_impairs))
