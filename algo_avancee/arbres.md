@@ -69,6 +69,12 @@ D   E   F
 On aura : `A B D E C F`
 
 #### Implémentation itérative
+- On commence par la racine, on l'ajoute à la pile et on l'affiche.
+- On traite ensuite son fils gauche, s'il a un fils droit on l'ajoute à la pile.
+- On l'affiche, et on continue ainsi jusqu'à ne plus avoir de fils gauche.
+- On prend alors le premier élément de la pile et on traite son fils droit.
+- Et ainsi de suite.
+
 ```python
 def parcours_prefixe(racine):
     pass
