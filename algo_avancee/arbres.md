@@ -69,15 +69,20 @@ D   E   F
 On aura : `A B D E C F`
 
 #### Implémentation itérative
-- On commence par la racine, on l'ajoute à la pile et on l'affiche.
-- On traite ensuite son fils gauche, s'il a un fils droit on l'ajoute à la pile.
-- On l'affiche, et on continue ainsi jusqu'à ne plus avoir de fils gauche.
-- On prend alors le premier élément de la pile et on traite son fils droit.
-- Et ainsi de suite.
-
 ```python
 def parcours_prefixe(racine):
-    pass
+    p = creer_pile()
+    empile(p, racine)
+    cur_node = None
+
+    while !pile_vide(p):
+        cur_node = sommet(p)
+        depile(p)
+        print(cur_node.val)
+        if cur_node.fd:
+            empile(cur_node.fd)
+        if cur_node.fg:
+            empile(cur_node.fg)
 ```
 
 ### Parcours infixe
@@ -99,6 +104,25 @@ D   E   F
 ```
 
 On aura : `D B E A F C`
+
+#### Implémentation itérative
+```python
+def parcours_infixe(racine):
+    p = creer_pile()
+    empile(p, racine)
+    cur_node = None
+    while !pile_vide(p):
+        cur_node = sommet(p)
+        depile(p)
+        if cur_node.fd:
+            empile(p, cur_node.fd)
+        if not cur_node.fg:
+            print(cur_node.val)
+        else:
+            empile(p, cur_node)
+            empile(p, cur_node.fg)
+# Ne fonctionne pas pour le moment... En recherche d'idée !
+```
 
 ### Parcours postfixe
 On parcourt récursivement selon cette règle :
