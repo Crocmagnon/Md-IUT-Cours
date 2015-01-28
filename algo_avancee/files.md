@@ -11,6 +11,8 @@ ajout_fin_file()
 elt = debut_file()
 retirer_debut_file()
 ```
+
+### Définition (listes)
 ```
 Maillon struct (
     valeur : INT
@@ -18,10 +20,8 @@ Maillon struct (
 
 File struct (
     debut : Maillon
-    Fin : Maillon)
+    fin : Maillon)
 ```
-
-### Définition (listes)
 ```python
 def creer_file():
     file = File(debut=None, fin=None)
@@ -53,6 +53,46 @@ def retirer_debut_file(file):
 ```
 
 ### Définition (tableaux)
+```
+File struct (
+    deb : int
+    fin : int
+    tab : tableau de X)
+```
+```python
+# On considèrera que la constante MAX est définie et correspond à la taille maximale possible d'un tableau
+
+def creer_file():
+    file = File(deb=-1, fin=-1, tab=numpy.empty(MAX))
+    # Checker syntaxe, il manque un paramètre
+    return file
+
+def file_vide(file):
+    return file.deb == -1
+
+def file_pleine(file):
+    return (file.fin + 1) % MAX == file.deb
+
+def ajout_fin_file(file, elt):
+    if file.deb == -1:
+        file.deb += 1
+        file.tab[file.deb] = elt
+    else:
+        file.tab[file.fin + 1] = elt
+    file.fin += 1
+
+def debut_file(file):
+    return file.tab[file.deb]
+
+def retirer_debut_file(file):
+    if file.deb == file.fin:
+        file.deb = -1
+        file.fin = -1
+    else:
+        file.deb += 1
+        file.deb %= MAX
+```
+
 `TODO : Implémenter ça pour le 1/02`
 
 ## Exercices
