@@ -52,39 +52,74 @@ def retirer_debut_file(file):
     free(mail)
 ```
 
+# Les files
+## Primitives
 ### Définition (tableaux)
+La structure de données utilisée sera la suivante :
 ```
 File struct (
     deb : int
     fin : int
     tab : tableau de X)
 ```
+
+Et on implémentera les primitives comme suit :  
+Les indices du tableau bouclent, de sorte que lorsqu'on atteint la fin théorique du tableau, si on a déjà retiré des éléments au début on peut encore en ajouter, et ceux-ci seront ajoutés au début du tableau.  
+Ainsi, la file n'est pleine que lorsque l'indice de fin est juste avant l'indice de début, modulo la taille du tableau.
 ```python
-# On considèrera que la constante MAX est définie et correspond à la taille maximale possible d'un tableau
+# On considèrera que la constante MAX est définie
+# et correspond à la taille maximale possible d'un tableau
 
 def creer_file():
-    file = File(deb=-1, fin=-1, tab=numpy.empty(MAX))
-    # Checker syntaxe, il manque un paramètre
+    """
+    On crée la file en définissant les indices de début à -1
+    et en créant un tableau vide de taille MAX.
+    """
+    file = File(deb=-1, fin=-1, tab=numpy.empty(MAX, object))
     return file
 
 def file_vide(file):
+    """
+    La file est vide si les deux indices sont à -1.
+    On s'arrangera pour les remettre à -1 si la file devait se vider.
+    """
     return file.deb == -1
 
 def file_pleine(file):
+    """
+    La file est pleine si les indices sont consécutifs
+    à la taille du tableau près :
+    si en ajoutant 1 à l'indice de fin on obtient l'indice de début,
+    la file est pleine.
+    """
     return (file.fin + 1) % MAX == file.deb
 
 def ajout_fin_file(file, elt):
+    """
+    Si la file est vide, on pense à décaler l'indice de début.
+    Puis on décale dans tous les cas l'indice de fin
+    et on ajoute notre élément.
+    """
     if file.deb == -1:
         file.deb += 1
-        file.tab[file.deb] = elt
-    else:
-        file.tab[file.fin + 1] = elt
     file.fin += 1
+    file.fin %= MAX
+    file.tab[file.fin] = elt
 
 def debut_file(file):
+    """
+    On retourne simplement la valeur contenue dans la case de début.
+    """
     return file.tab[file.deb]
 
 def retirer_debut_file(file):
+    """
+    Si les deux indices sont égaux, ça signifie que la file
+    ne contient qu'un seul élément. En en retirant un, la file devient vide.
+    On met donc à -1 les indices pour nous permettre de le reconnaître.
+    Sinon on incrémente simplement l'indice de début,
+    à la taille du tableau près.
+    """
     if file.deb == file.fin:
         file.deb = -1
         file.fin = -1
@@ -92,8 +127,6 @@ def retirer_debut_file(file):
         file.deb += 1
         file.deb %= MAX
 ```
-
-`TODO : Implémenter ça pour le 1/02`
 
 ## Exercices
 ### Exercice 1
