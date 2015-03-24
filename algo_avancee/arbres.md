@@ -92,6 +92,8 @@ On parcourt récursivement selon cette règle :
 - On affiche le noeud courant.
 - On passe au fils droit et on applique cette règle.
 
+_Ce parcours permet de retourner une liste ordonnée en parcourant un ABR (Arbre Binaire de Recherche)._
+
 Ainsi, pour un arbre comme celui-ci :
 
 ```
@@ -143,3 +145,18 @@ D   E   F
 ```
 
 On aura : `D E B F C A`
+
+### Insérer une valeur dans un ABR
+```python
+def planter(racine, val):
+    if val <= racine.val:
+        if racine.fg:
+            planter(racine.fg, val)
+        else:
+            racine.fg = new Noeud(val=val, fg=None, fd=None)
+    else:
+        if racine.fd:
+            planter(racine.fd, val)
+        else:
+            racine.fd = new Noeud(val=val, fg=None, fd=None)
+```
