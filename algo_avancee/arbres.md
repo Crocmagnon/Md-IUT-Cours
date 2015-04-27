@@ -33,7 +33,7 @@ On a quatre types de parcours.
 Chaque niveau va être parcouru linéairement (toutes les valeurs du même niveau de gauche à droite à la suite).
 
 #### Implémentation itérative
-```python
+```py
 def parcours_niveau(racine):
     f = creer_file()
     e_cour = racine
@@ -69,7 +69,7 @@ D   E   F
 On aura : `A B D E C F`
 
 #### Implémentation itérative
-```python
+```py
 def parcours_prefixe(racine):
     p = creer_pile()
     empile(p, racine)
@@ -108,7 +108,7 @@ D   E   F
 On aura : `D B E A F C`
 
 #### Implémentation itérative
-```python
+```py
 def parcours_infixe(racine):
     p = creer_pile()
     empile(p, racine)
@@ -147,7 +147,7 @@ D   E   F
 On aura : `D E B F C A`
 
 ### Insérer une valeur dans un ABR
-```python
+```py
 def planter(racine, val):
     if val <= racine.val:
         if racine.fg:
@@ -162,7 +162,7 @@ def planter(racine, val):
 ```
 
 ### Rechercher dans un ABR
-```python
+```py
 def recherche(racine, val):
     cur_node = racine
     while cur_node:
@@ -173,4 +173,75 @@ def recherche(racine, val):
         else:
             cur_node = cur_node.fd
     return False
+```
+
+### Supprimer un élément d'un ABR
+```py
+def suppression(racine, val):
+    # Il faut remplacer la valeur supprimée par la plus petite valeur
+    # de son sous-arbre droit ou la plus grande de son sous-arbre gauche.
+    # Si cette valeur de remplacement est une feuille, c'est cool.
+    # Sinon, il faut faire ça en cascade.
+    cur_node = racine
+    if cur_node.val == val:
+
+    while cur_node:
+        if cur_node.val > val:
+            if cur_node.fg.val == val:
+                if is_feuille(cur_node.fg):
+                    cur_node.fg = None
+                    return
+                else if (is_feuille(biggest_node(cur_node.fg.fg))):
+                    biggest = biggest_node(cur_node.fg.fg)
+                    replace(cur_node.fg, biggest)
+                    return
+                else:
+                    smallest = smallest_node(cur_node.fg.fd)
+                    replace(cur_node.fg, smallest)
+                    return
+            else:
+                cur_node = cur_node.fg
+        else:
+            if cur_node.fd.val == val:
+                if is_feuille(cur_node.fd):
+                    cur_node.fd = None
+                    return
+                else if (is_feuille(biggest_node(cur_node.fd.fg))):
+                    biggest = biggest_node(cur_node.fg.fg)
+                    replace(cur_node.fd, biggest)
+                    return
+                else:
+                    smallest = smallest_node(cur_node.fd.fd)
+                    replace(cur_node.fd, smallest)
+                    return
+            else:
+                cur_node = cur_node.fd
+```
+
+```py
+def biggest_node(racine):
+    cur_node = cur_node
+    if cur_node:
+        while cur_node.fd:
+            cur_node = cur_node.fd
+    return cur_node
+```
+
+```py
+def smallest_node(racine):
+    if cur_node:
+        while cur_node.fg:
+            cur_node = cur_node.fg
+    return cur_node
+```
+
+```py
+def is_feuille(el):
+    return !el.fg and !el.fd
+```
+
+```py
+def replace(node, replacer):
+    node.val = replacer.val
+    supprimer(replacer.val)
 ```
