@@ -160,3 +160,17 @@ def planter(racine, val):
         else:
             racine.fd = new Noeud(val=val, fg=None, fd=None)
 ```
+
+### Rechercher dans un ABR
+```python
+def recherche(racine, val):
+    cur_node = racine
+    while cur_node:
+        if cur_node.val == val:
+            return True
+        else if cur_node.val > val:
+            cur_node = cur_node.fg
+        else:
+            cur_node = cur_node.fd
+    return False
+```
