@@ -1,6 +1,4 @@
 # Cours à l'IUT
-Cette page est accessible à l'adresse suivante : http://cours.augendre.info/
-
 Ce dépôt rassemble mes notes sur les cours à l'IUT de :
 
 - Algo avancée
